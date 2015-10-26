@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../lecture13-PWM/timer.c ../lecture13-PWM/pwm.c ../lecture13-PWM/main.c ../lecture13-PWM/interrupt.c ../lecture13-PWM/adc.c lcd.c
+SOURCEFILES_QUOTED_IF_SPACED=adc.c interrupt.c lcd.c main.c pwm.c timer.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1314144746/timer.o ${OBJECTDIR}/_ext/1314144746/pwm.o ${OBJECTDIR}/_ext/1314144746/main.o ${OBJECTDIR}/_ext/1314144746/interrupt.o ${OBJECTDIR}/_ext/1314144746/adc.o ${OBJECTDIR}/lcd.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1314144746/timer.o.d ${OBJECTDIR}/_ext/1314144746/pwm.o.d ${OBJECTDIR}/_ext/1314144746/main.o.d ${OBJECTDIR}/_ext/1314144746/interrupt.o.d ${OBJECTDIR}/_ext/1314144746/adc.o.d ${OBJECTDIR}/lcd.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/interrupt.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pwm.o ${OBJECTDIR}/timer.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/interrupt.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pwm.o.d ${OBJECTDIR}/timer.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1314144746/timer.o ${OBJECTDIR}/_ext/1314144746/pwm.o ${OBJECTDIR}/_ext/1314144746/main.o ${OBJECTDIR}/_ext/1314144746/interrupt.o ${OBJECTDIR}/_ext/1314144746/adc.o ${OBJECTDIR}/lcd.o
+OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/interrupt.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pwm.o ${OBJECTDIR}/timer.o
 
 # Source Files
-SOURCEFILES=../lecture13-PWM/timer.c ../lecture13-PWM/pwm.c ../lecture13-PWM/main.c ../lecture13-PWM/interrupt.c ../lecture13-PWM/adc.c lcd.c
+SOURCEFILES=adc.c interrupt.c lcd.c main.c pwm.c timer.c
 
 
 CFLAGS=
@@ -94,35 +94,17 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1314144746/timer.o: ../lecture13-PWM/timer.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/timer.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/timer.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/timer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/timer.o.d" -o ${OBJECTDIR}/_ext/1314144746/timer.o ../lecture13-PWM/timer.c   
+${OBJECTDIR}/adc.o: adc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/adc.o.d 
+	@${RM} ${OBJECTDIR}/adc.o 
+	@${FIXDEPS} "${OBJECTDIR}/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc.o.d" -o ${OBJECTDIR}/adc.o adc.c   
 	
-${OBJECTDIR}/_ext/1314144746/pwm.o: ../lecture13-PWM/pwm.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/pwm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/pwm.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/pwm.o.d" -o ${OBJECTDIR}/_ext/1314144746/pwm.o ../lecture13-PWM/pwm.c   
-	
-${OBJECTDIR}/_ext/1314144746/main.o: ../lecture13-PWM/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/main.o.d" -o ${OBJECTDIR}/_ext/1314144746/main.o ../lecture13-PWM/main.c   
-	
-${OBJECTDIR}/_ext/1314144746/interrupt.o: ../lecture13-PWM/interrupt.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/interrupt.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/interrupt.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/interrupt.o.d" -o ${OBJECTDIR}/_ext/1314144746/interrupt.o ../lecture13-PWM/interrupt.c   
-	
-${OBJECTDIR}/_ext/1314144746/adc.o: ../lecture13-PWM/adc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/adc.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/adc.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/adc.o.d" -o ${OBJECTDIR}/_ext/1314144746/adc.o ../lecture13-PWM/adc.c   
+${OBJECTDIR}/interrupt.o: interrupt.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/interrupt.o.d 
+	@${RM} ${OBJECTDIR}/interrupt.o 
+	@${FIXDEPS} "${OBJECTDIR}/interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/interrupt.o.d" -o ${OBJECTDIR}/interrupt.o interrupt.c   
 	
 ${OBJECTDIR}/lcd.o: lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -130,42 +112,60 @@ ${OBJECTDIR}/lcd.o: lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/lcd.o 
 	@${FIXDEPS} "${OBJECTDIR}/lcd.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/lcd.o.d" -o ${OBJECTDIR}/lcd.o lcd.c   
 	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c   
+	
+${OBJECTDIR}/pwm.o: pwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pwm.o.d 
+	@${RM} ${OBJECTDIR}/pwm.o 
+	@${FIXDEPS} "${OBJECTDIR}/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/pwm.o.d" -o ${OBJECTDIR}/pwm.o pwm.c   
+	
+${OBJECTDIR}/timer.o: timer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/timer.o.d 
+	@${RM} ${OBJECTDIR}/timer.o 
+	@${FIXDEPS} "${OBJECTDIR}/timer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/timer.o.d" -o ${OBJECTDIR}/timer.o timer.c   
+	
 else
-${OBJECTDIR}/_ext/1314144746/timer.o: ../lecture13-PWM/timer.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/timer.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/timer.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/timer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/timer.o.d" -o ${OBJECTDIR}/_ext/1314144746/timer.o ../lecture13-PWM/timer.c   
+${OBJECTDIR}/adc.o: adc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/adc.o.d 
+	@${RM} ${OBJECTDIR}/adc.o 
+	@${FIXDEPS} "${OBJECTDIR}/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc.o.d" -o ${OBJECTDIR}/adc.o adc.c   
 	
-${OBJECTDIR}/_ext/1314144746/pwm.o: ../lecture13-PWM/pwm.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/pwm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/pwm.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/pwm.o.d" -o ${OBJECTDIR}/_ext/1314144746/pwm.o ../lecture13-PWM/pwm.c   
-	
-${OBJECTDIR}/_ext/1314144746/main.o: ../lecture13-PWM/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/main.o.d" -o ${OBJECTDIR}/_ext/1314144746/main.o ../lecture13-PWM/main.c   
-	
-${OBJECTDIR}/_ext/1314144746/interrupt.o: ../lecture13-PWM/interrupt.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/interrupt.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/interrupt.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/interrupt.o.d" -o ${OBJECTDIR}/_ext/1314144746/interrupt.o ../lecture13-PWM/interrupt.c   
-	
-${OBJECTDIR}/_ext/1314144746/adc.o: ../lecture13-PWM/adc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1314144746" 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/adc.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1314144746/adc.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1314144746/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1314144746/adc.o.d" -o ${OBJECTDIR}/_ext/1314144746/adc.o ../lecture13-PWM/adc.c   
+${OBJECTDIR}/interrupt.o: interrupt.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/interrupt.o.d 
+	@${RM} ${OBJECTDIR}/interrupt.o 
+	@${FIXDEPS} "${OBJECTDIR}/interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/interrupt.o.d" -o ${OBJECTDIR}/interrupt.o interrupt.c   
 	
 ${OBJECTDIR}/lcd.o: lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/lcd.o.d 
 	@${RM} ${OBJECTDIR}/lcd.o 
 	@${FIXDEPS} "${OBJECTDIR}/lcd.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/lcd.o.d" -o ${OBJECTDIR}/lcd.o lcd.c   
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c   
+	
+${OBJECTDIR}/pwm.o: pwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pwm.o.d 
+	@${RM} ${OBJECTDIR}/pwm.o 
+	@${FIXDEPS} "${OBJECTDIR}/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/pwm.o.d" -o ${OBJECTDIR}/pwm.o pwm.c   
+	
+${OBJECTDIR}/timer.o: timer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/timer.o.d 
+	@${RM} ${OBJECTDIR}/timer.o 
+	@${FIXDEPS} "${OBJECTDIR}/timer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/timer.o.d" -o ${OBJECTDIR}/timer.o timer.c   
 	
 endif
 

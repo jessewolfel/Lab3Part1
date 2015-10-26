@@ -1,9 +1,9 @@
 /*
- * File:   lcd.h
- * Authors:
- *
- * Created on December 31, 2014, 1:39 PM
- */
+* File:   lcd.h
+* Authors:
+*
+* Created on December 31, 2014, 1:39 PM
+*/
 #ifndef LCD_H
 #define LCD_H
 void writeLCD(unsigned char word, unsigned int commandType, unsigned int delay);

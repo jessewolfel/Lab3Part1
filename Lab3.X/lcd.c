@@ -17,14 +17,14 @@
 #define LCD_DATA5 LATEbits.LATE3
 #define LCD_DATA4 LATEbits.LATE1
 #define LCD_RS LATDbits.LATD5
-#define LCD_E LATGbits.LATG12
+#define LCD_E LATDbits.LATD11
 
 #define TRIS_D7 TRISEbits.TRISE7
 #define TRIS_D6 TRISEbits.TRISE5
 #define TRIS_D5 TRISEbits.TRISE3
 #define TRIS_D4 TRISEbits.TRISE1
 #define TRIS_RS TRISDbits.TRISD5
-#define TRIS_E  TRISGbits.TRISG12
+#define TRIS_E  TRISDbits.TRISD11
 
 #define OUTPUT 0
 #define INPUT 1
@@ -123,6 +123,7 @@ void printStringLCD(const char* s) {
 void clearLCD(){
     unsigned char word = 0x01;
     writeLCD(word, 0, 1400);
+    moveCursorLCD('1','1');
 }
 
 /*
@@ -141,16 +142,16 @@ void moveCursorLCD(unsigned char x, unsigned char y){
  */
 void testLCD(){
     //initLCD();
-    //clearLCD();
-    //moveCursorLCD(1,1);
+    clearLCD();
+    moveCursorLCD(1,1);
     int i = 0;
-    //printCharLCD('c');
+    printCharLCD('c');
     for(i = 0; i < 1000; i++) delayUs(1000);
     clearLCD();
     moveCursorLCD(1,1);
-    printStringLCD("I Love");
+    printStringLCD("Hello!");
     moveCursorLCD(1, 2);
     for(i = 0; i < 1000; i++) delayUs(1000);
-    printStringLCD("You!");
+    printStringLCD("Hello!");
     for(i = 0; i < 1000; i++) delayUs(1000);
 }
