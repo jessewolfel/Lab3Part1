@@ -8,9 +8,11 @@
 #include <sys/attribs.h>
 #include "config.h"
 #include "interrupt.h"
+#include "lcd.h"
 #include "timer.h"
 #include "pwm.h"
 #include "adc.h"
+
 
 volatile unsigned int analogVal = 0;
 
@@ -52,16 +54,17 @@ void getAnalogVoltage (unsigned int val)
 
 int main(void){
    // SYSTEMConfigPerformance(40000000);
-    
+    enableInterrupts();
     initTimer2();
     initPWM();
     initADC();
     initLCD();
-    enableInterrupts();
+    
     
     while(1){
         moveCursorLCD(1,1);
-        getAnalogVoltage(analogVal);
+        printCharLCD('c');
+        //getAnalogVoltage(analogVal);
     }
     
     return 0;
