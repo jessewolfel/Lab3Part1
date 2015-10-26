@@ -14,27 +14,6 @@
 
 volatile unsigned int analogVal = 0;
 
-int main(void){
-    SYSTEMConfigPerformance(40000000);
-    
-    initTimer2();
-    initPWM();
-    initADC();
-    enableInterrupts();
-    
-    while(1){   
-        getAnalogVoltage(analogVal);
-    }
-    
-    return 0;
-}
-
-void __ISR(_ADC_VECTOR, IPL7SRS) _ADCInterrupt(void){
-    IFS0bits.AD1IF = 0;
-    analogVal = ADC1BUF0;
-}
-
-// Want to read the voltage from the analog input pin and return it
 void getAnalogVoltage (unsigned int val)
 {
     unsigned char F1;
@@ -44,11 +23,7 @@ void getAnalogVoltage (unsigned int val)
     unsigned char analogVoltage[5];
     
     
-    analogVoltage[0] = F1;
-    analogVoltage[1] = F10;
-    analogVoltage[2] = S1;
-    analogVoltage[3] = S10;
-    analogVoltage[4] = '\0';
+
     
     //Set the 1's term
     F1 = val % 10;
@@ -64,5 +39,39 @@ void getAnalogVoltage (unsigned int val)
     val = (val - val%10)/10;
     //Set the 1000's term
     S10 = val%10;
-    printStringLCD(analogVoltage);
+    
+    analogVoltage[0] = F1;
+    analogVoltage[1] = F10;
+    analogVoltage[2] = S1;
+    analogVoltage[3] = S10;
+    analogVoltage[4] = '\0';
+    
+    // printStringLCD(analogVoltage);
+    
 }
+
+int main(void){
+   // SYSTEMConfigPerformance(40000000);
+    
+    initTimer2();
+    initPWM();
+    initADC();
+    initLCD();
+    enableInterrupts();
+    
+    while(1){
+        moveCursorLCD(1,1);
+        getAnalogVoltage(analogVal);
+    }
+    
+    return 0;
+}
+
+void __ISR(_ADC_VECTOR, IPL7SRS) _ADCInterrupt(void){
+    int dummyVar = ADC1BUF0;
+    IFS0bits.AD1IF = 0;
+    // Is there a buffer for each analog pin?
+    analogVal = ADC1BUF2;
+}
+
+// Want to read the voltage from the analog input pin and return it

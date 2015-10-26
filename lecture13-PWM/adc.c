@@ -21,7 +21,7 @@ void initADC(){
     AD1CON3bits.SAMC = 2; // 2 Tad per sample
     AD1CON3bits.ADCS = 0xFF; // 512 times the PBCLK
     AD1CHSbits.CH0NA = 0; // Use Vref- as negative reference
-    AD1CHSbits.CH0SA = 2; // Scan AN0 at least
+    AD1CHSbits.CH0SA = 2; // Scan AN2 at least
     IFS0bits.AD1IF = 0;
     IEC0bits.AD1IE = 1;
     IPC5bits.AD1IP = 7;

@@ -19,13 +19,13 @@ void initTimer2(){
 
 //Uses timer 2
 void delayUs(unsigned int delay){
-    TMR1 = 0;
-    PR1 = 5*delay;
+    TMR2 = 0;
+    PR2 = 5*delay;
     IFS0bits.T2IF = 0;
-    T1CONbits.TCKPS = 1;
+    T2CONbits.TCKPS = 1;
     disableInterrupts();
-    T1CONbits.TON = 1;
-    while(IFS0bits.T1IF == 0);
-    T1CONbits.TON = 0;
+    T2CONbits.TON = 1;
+    while(IFS0bits.T2IF == 0);
+    T2CONbits.TON = 0;
     enableInterrupts();
 }
