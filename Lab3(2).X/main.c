@@ -17,7 +17,7 @@ void getAnalogVoltage (unsigned int val)
     
     
     
-
+    
     
     //Set the 1's term
     F1 = val % 1;
@@ -56,6 +56,7 @@ int main (void) {
     initTMR();
     initLCD();
     initADC();
+    initPWM();
     
     int i;
     while(1) {
