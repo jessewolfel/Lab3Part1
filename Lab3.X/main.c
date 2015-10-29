@@ -53,9 +53,9 @@ void getAnalogVoltage (unsigned int val)
 }
 
 int main(void){
-    // SYSTEMConfigPerformance(40000000);
+    //SYSTEMConfigPerformance(40000000);
     enableInterrupts();
-    initTimer2();
+    initTMR();
     initPWM();
     initADC();
     initLCD();
@@ -63,12 +63,12 @@ int main(void){
     
     while(1){
         
-        if (IFS0bits.AD1IF == 1)
+        /*if (IFS0bits.AD1IF == 1)
         {
             analogVal = ADC1BUF0;
             IFS0bits.AD1IF = 0;
-        }
-        moveCursorLCD(1,1);
+        }*/
+        //moveCursorLCD(1,1);
         printCharLCD('c');
         //getAnalogVoltage(analogVal);
     }
