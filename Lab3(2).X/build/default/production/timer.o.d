@@ -1,3 +1,4 @@
 build/default/production/timer.o:  \
 timer.c  \
-lcd.h 
+lcd.h  \
+timer.h 

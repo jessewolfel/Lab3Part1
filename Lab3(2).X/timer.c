@@ -7,6 +7,8 @@
 
 #include <xc.h>
 #include "lcd.h"
+#include "timer.h"
+
 
 
 void initTMR() {
@@ -23,7 +25,15 @@ void initTMR() {
     T2CONbits.TCKPS = 7; //Initialize PreScalar to 256
     T2CONbits.TCS = 0;
     IFS0bits.T2IF = 0;
+    
+    // Initialize Timer 3 for PWM
+    TMR3 = 0;
+    PR3 = 1023;
+    T3CONbits.TCKPS = 0;
+    T3CONbits.TCS = 0;
+    T3CONbits.ON = 1;
    }
+    
 void delayUs(unsigned int delay){
     TMR1 = 0; //clear timer 1
     PR1 = 6*delay - 1; // set PR equal to a 1us * delay
